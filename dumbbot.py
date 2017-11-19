@@ -8,8 +8,6 @@ Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
 
-bets = ["Ty Wins", "Brian wins"]
-
 @bot.event
 @asyncio.coroutine
 def on_ready():
@@ -47,15 +45,27 @@ def brian():
 
 @bot.command()
 @asyncio.coroutine
-def api():
-	'''Provides discord.py api link'''
-	yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
+def link(arg):
+	'''Provides the link desired
+	<arg> which link you want. Links are:
+		api
+		rl
+		???'''
+	if arg == 'api':
+		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
+	elif arg == 'rl':
+		yield from bot.say('https://www.twitch.tv/rocketleague')
+	elif arg == '???':
+		yield from bot.say('https://www.youtube.com/watch?v=9G7aT6p_aGk')
+	else:
+		yield from bot.say('use \'/help link\' for valid links')
 
 @bot.command()
 @asyncio.coroutine
-def bet():
-	'''YOU WANNA BET??'''
-	yield from bot.say(random.choice(bets))
+def bet(*args):
+	'''YOU WANNA BET??
+	<argn> nth bet string'''
+	yield from bot.say(random.choice(args))
 
 @bot.command(pass_context=True)
 @asyncio.coroutine
