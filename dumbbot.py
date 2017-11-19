@@ -1,11 +1,14 @@
 import discord
-import asyncio
 from discord.ext.commands import Bot
 from discord.ext import commands
+import asyncio
+import random
 
 Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
+
+bets = ["Ty Wins", "Brian wins"]
 
 @bot.event
 @asyncio.coroutine
@@ -41,6 +44,18 @@ def brian():
 	'''Just tells it as it is
 	Brian is so swaggy that it required a command'''
 	yield from bot.say('Brian is the swaggiest motherfucker')
+
+@bot.command()
+@asyncio.coroutine
+def api():
+	'''Provides discord.py api link'''
+	yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
+
+@bot.command()
+@asyncio.coroutine
+def bet():
+	'''YOU WANNA BET??'''
+	yield from bot.say(random.choice(bets))
 
 @bot.command(pass_context=True)
 @asyncio.coroutine
