@@ -17,8 +17,11 @@ def on_ready():
 def on_message(message):
     if message.content.startswith('http') and message.author.id != message.server.me.id:
     	yield from bot.send_message(discord.Object(id='380028343611031565'), message.content)
-    elif (not message.content.startswith('!')) and message.channel.name == 'stat_tracker':
+    elif (not message.content.startswith('!')) and message.channel.id == '381123909556371456':
     	if message.author.id != '190198409150464001':
+    		yield from bot.delete_message(message)
+    elif (not message.content.startswith('http')) and message.channel.id == '380028343611031565':
+    	if not message.attachments:
     		yield from bot.delete_message(message)
 
     yield from bot.process_commands(message)
