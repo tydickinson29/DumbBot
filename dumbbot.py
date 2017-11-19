@@ -50,13 +50,16 @@ def link(arg):
 	<arg> which link you want. Links are:
 		api
 		rl
-		???'''
+		?
+		repo'''
 	if arg == 'api':
 		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
 	elif arg == 'rl':
 		yield from bot.say('https://www.twitch.tv/rocketleague')
-	elif arg == '???':
+	elif arg == '?':
 		yield from bot.say('https://www.youtube.com/watch?v=9G7aT6p_aGk')
+	elif arg == 'repo':
+		yield from bot.say('https://github.com/Brigoon/DumbBot')
 	else:
 		yield from bot.say('use \'/help link\' for valid links')
 

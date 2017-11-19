@@ -11,6 +11,7 @@ Has commands:
     /bet   <args...> - chooses pseudo-randomly between args
     /link  <arg>     - provides link
         link arguments:
-            api - discord.py manual
-            rl  - rocketleague twitch account
-            ??? - secrets
+            api  - discord.py manual
+            rl   - rocketleague twitch account
+            ?    - secrets
+            repo - git repository for DumbBot
