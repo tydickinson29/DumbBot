@@ -26,6 +26,8 @@ def on_message(message):
 	elif (not message.content.startswith('http')) and message.channel.id == '380028343611031565':
 		if not message.attachments:
 			yield from bot.delete_message(message)
+	elif message.content == 'kk':
+		yield from bot.send_message(message.channel, 'It\'s kkk ya fag')
 
 	yield from bot.process_commands(message)
 
@@ -48,10 +50,10 @@ def brian():
 def link(arg):
 	'''Provides the link desired
 	<arg> which link you want. Links are:
-		api
-		rl
-		?
-		repo'''
+	  api
+	  rl
+	  ?
+	  repo'''
 	if arg == 'api':
 		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
 	elif arg == 'rl':
