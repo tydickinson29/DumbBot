@@ -125,19 +125,19 @@ def pokedex(*arg):
 		need.close()
 	elif len(arg) == 2:
 		dex = open("pokedex.txt","r")
-		complete = dex.readlines()
+		pokedex = dex.read()
 		dex.close()
 
-		if arg[1] in complete:
+		if arg[1] in pokedex:
 			if arg[0]=='brian':
 				file = open("brian_dex.txt","r")
 			elif arg[0]=='ty':
 				file = open("ty_dex.txt","r")
 
-			cont = file.readlines()
+			cont = file.read()
 			file.close()
 
-			if arg[1] in cont:
+			if not arg[1] in cont:
 				if arg[0]=='brian':
 					file = open("brian_dex.txt","w")
 				elif arg[0]=='ty':
