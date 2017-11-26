@@ -61,15 +61,13 @@ def link(*arg):
 	  rl
 	  ?
 	  repo'''
-	if len(arg) != 2:
-		yield from bot.say('use \'/help link\'')
-	elif arg == 'api':
+	if arg[0] == 'api':
 		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
-	elif arg == 'rl':
+	elif arg[0] == 'rl':
 		yield from bot.say('https://www.twitch.tv/rocketleague')
-	elif arg == '?':
+	elif arg[0] == '?':
 		yield from bot.say('https://www.youtube.com/watch?v=9G7aT6p_aGk')
-	elif arg == 'repo':
+	elif arg[0] == 'repo':
 		yield from bot.say('https://github.com/Brigoon/DumbBot')
 	else:
 		yield from bot.say('use \'/help link\' for valid links')
