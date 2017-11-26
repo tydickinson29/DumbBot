@@ -125,26 +125,36 @@ def pokedex(*arg):
 		need.close()
 	elif len(arg) == 2:
 		dex = open("pokedex.txt","r")
-		pokedex = dex.read()
+		pokedex = dex.readlines()
 		dex.close()
 
-		if arg[1] in pokedex:
+		valid = False
+
+		for i in range(len(pokedex)):
+			if arg[1] == pokedex[i].rstrip():
+				valid = True
+				break
+
+		if valid:
 			if arg[0]=='brian':
 				file = open("brian_dex.txt","r")
 			elif arg[0]=='ty':
 				file = open("ty_dex.txt","r")
 
-			cont = file.read()
+			cont = file.readlines()
 			file.close()
 
-			if not arg[1] in cont:
-				if arg[0]=='brian':
-					file = open("brian_dex.txt","w")
-				elif arg[0]=='ty':
-					file = open("ty_dex.txt","w")
+			for j in range(len(cont)):
+				if arg[1] == cont[j].rstrip():
+					valid = False
+					break
 
-				for line in cont:
-					file.write(line)
+			if valid:
+				if arg[0]=='brian':
+					file = open("brian_dex.txt","a")
+				elif arg[0]=='ty':
+					file = open("ty_dex.txt","a")
+
 				file.write(arg[1])
 				file.write('\n')
 				file.close()
