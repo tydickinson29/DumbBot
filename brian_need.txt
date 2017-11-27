@@ -1,3 +1,4 @@
+@@@@@@@@@@ GEN 1 @@@@@@@@@@
 Venasaur
 Charizard
 Dugtrio
@@ -17,6 +18,8 @@ Zapdos
 Moltres
 Mewtwo
 Mew
+
+@@@@@@@@@@ GEN 2 @@@@@@@@@@
 Meganium
 Feraligatr
 Cleffa
@@ -51,3 +54,6 @@ Pupitar
 Tyranitar
 Lugia
 Ho-Oh
+Celebi
+
+@@@@@@@@@@ GEN 3 @@@@@@@@@@

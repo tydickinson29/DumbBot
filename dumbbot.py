@@ -96,7 +96,9 @@ def pokedex(*arg):
 	  example: /pokedex brian Bulbasaur
 	  	Yes, the capitalization is required'''
 	if len(arg) == 1:
-		dex = open("pokedex.txt","r")
+		dex1 = open("pokedex_gen1.txt","r")
+		dex2 = open("pokedex_gen2.txt","r")
+		dex3 = open("pokedex_gen3.txt","r")
 
 		if arg[0]=='brian':
 			file = open("brian_dex.txt","r")
@@ -107,7 +109,16 @@ def pokedex(*arg):
 
 		cont = file.readlines()
 		
-		for line in dex:
+		need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
+		for line in dex1:
+			if not line in cont:
+				need.write(line)
+		need.write("\n@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
+		for line in dex2:
+			if not line in cont:
+				need.write(line)
+		need.write("\n@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
+		for line in dex3:
 			if not line in cont:
 				need.write(line)
 		need.close()
@@ -121,17 +132,33 @@ def pokedex(*arg):
 		yield from bot.say(need.read())
 
 		file.close()
-		dex.close()
+		dex1.close()
+		dex2.close()
+		dex3.close()
 		need.close()
 	elif len(arg) == 2:
-		dex = open("pokedex.txt","r")
-		pokedex = dex.readlines()
-		dex.close()
+		dex1 = open("pokedex_gen1.txt","r")
+		dex2 = open("pokedex_gen2.txt","r")
+		dex3 = open("pokedex_gen3.txt","r")
+		pokedex1 = dex1.readlines()
+		pokedex2 = dex2.readlines()
+		pokedex3 = dex3.readlines()
+		dex1.close()
+		dex2.close()
+		dex3.close()
 
 		valid = False
 
-		for i in range(len(pokedex)):
-			if arg[1] == pokedex[i].rstrip():
+		for i in range(len(pokedex1)):
+			if arg[1] == pokedex1[i].rstrip():
+				valid = True
+				break
+		for i in range(len(pokedex2)):
+			if arg[1] == pokedex2[i].rstrip():
+				valid = True
+				break
+		for i in range(len(pokedex3)):
+			if arg[1] == pokedex3[i].rstrip():
 				valid = True
 				break
 
@@ -158,6 +185,7 @@ def pokedex(*arg):
 				file.write(arg[1])
 				file.write('\n')
 				file.close()
+				yield from bot.say('{} successfully added!'.format(arg[1]))
 			else:
 				yield from bot.say('This Pokemon is already registered in {}s Pokedex'.format(arg[0]))
 		else:
