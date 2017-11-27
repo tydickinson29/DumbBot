@@ -8,6 +8,9 @@ Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
 
+def update_dex(name,pokemon):
+
+
 @bot.event
 @asyncio.coroutine
 def on_ready():
@@ -94,7 +97,7 @@ def pokedex(*arg):
 	  <arg1> same as previous
 	  <arg2> name of pokemon to be added
 	  example: /pokedex brian Bulbasaur
-	  	Yes, the capitalization is required'''
+	    Yes, the capitalization is required'''
 	if len(arg) == 1:
 		dex1 = open("pokedex_gen1.txt","r")
 		dex2 = open("pokedex_gen2.txt","r")
@@ -154,11 +157,11 @@ def pokedex(*arg):
 				valid = True
 				break
 		for i in range(len(pokedex2)):
-			if arg[1] == pokedex2[i].rstrip():
+			if (arg[1] == pokedex2[i].rstrip()) or valid:
 				valid = True
 				break
 		for i in range(len(pokedex3)):
-			if arg[1] == pokedex3[i].rstrip():
+			if (arg[1] == pokedex3[i].rstrip()) or valid:
 				valid = True
 				break
 
