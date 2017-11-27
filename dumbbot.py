@@ -8,9 +8,6 @@ Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
 
-def update_dex(name,pokemon):
-
-
 @bot.event
 @asyncio.coroutine
 def on_ready():
