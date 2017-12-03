@@ -8,6 +8,39 @@ Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
 
+def update_dex(name):
+	dex1 = open("pokedex_gen1.txt","r")
+	dex2 = open("pokedex_gen2.txt","r")
+	dex3 = open("pokedex_gen3.txt","r")
+
+	if name=='brian':
+		file = open("brian_dex.txt","r")
+		need = open("brian_need.txt","w")
+	elif name=='ty':
+		file = open("ty_dex.txt","r")
+		need = open("ty_need.txt","w")
+
+	cont = file.readlines()
+		
+	need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
+	for line in dex1:
+		if not line in cont:
+			need.write(line)
+	need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
+	for line in dex2:
+		if not line in cont:
+			need.write(line)
+	need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
+	for line in dex3:
+		if not line in cont:
+			need.write(line)
+	need.close()
+
+	file.close()
+	dex1.close()
+	dex2.close()
+	dex3.close()
+
 @bot.event
 @asyncio.coroutine
 def on_ready():
@@ -54,13 +87,20 @@ def ryan():
 
 @bot.command()
 @asyncio.coroutine
+def bryony():
+	'''Just tells it as it is'''
+	yield from bot.say('Bryony is much better than Ty')
+
+@bot.command()
+@asyncio.coroutine
 def link(*arg):
 	'''Provides the link desired
 	<arg> which link you want. Links are:
 	  api
 	  rl
 	  ?
-	  repo'''
+	  repo
+	  nests'''
 	if arg[0] == 'api':
 		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
 	elif arg[0] == 'rl':
@@ -69,6 +109,8 @@ def link(*arg):
 		yield from bot.say('https://www.youtube.com/watch?v=9G7aT6p_aGk')
 	elif arg[0] == 'repo':
 		yield from bot.say('https://github.com/Brigoon/DumbBot')
+	elif arg[0] == 'nests':
+		yield from bot.say('https://thesilphroad.com/atlas')
 	else:
 		yield from bot.say('use \'/help link\' for valid links')
 
@@ -89,53 +131,64 @@ def pokedex(*arg):
 	<arg1>:
 	  brian: shows Brians needed pokemon
 	  ty: shows Tys needed pokemon
+	  both: shows what both Ty and Brian do not have
 	  example: /pokedex brian
 	<arg1> <arg2>: adds a pokemon to the pokedex
 	  <arg1> same as previous
 	  <arg2> name of pokemon to be added
 	  example: /pokedex brian Bulbasaur
 	    Yes, the capitalization is required'''
-	if len(arg) == 1:
+	if (len(arg)==1) and (arg[0]=='both'):
+		dex_brian = open("brian_dex.txt","r")
+		dex_ty = open("ty_dex.txt","r")
 		dex1 = open("pokedex_gen1.txt","r")
 		dex2 = open("pokedex_gen2.txt","r")
 		dex3 = open("pokedex_gen3.txt","r")
+		need = open("both_need.txt","w")
 
-		if arg[0]=='brian':
-			file = open("brian_dex.txt","r")
-			need = open("brian_need.txt","w")
-		elif arg[0]=='ty':
-			file = open("ty_dex.txt","r")
-			need = open("ty_need.txt","w")
+		cont_brian = dex_brian.readlines()
+		cont_ty = dex_ty.readlines()
 
-		cont = file.readlines()
-		
 		need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
 		for line in dex1:
-			if not line in cont:
+			if not ((line in cont_brian) or (line in cont_ty)):
 				need.write(line)
-		need.write("\n@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
+		need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
 		for line in dex2:
-			if not line in cont:
+			if not ((line in cont_brian) or (line in cont_ty)):
 				need.write(line)
-		need.write("\n@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
+		need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
 		for line in dex3:
-			if not line in cont:
+			if not ((line in cont_brian) or (line in cont_ty)):
 				need.write(line)
+
+		dex_brian.close()
+		dex_ty.close()
+		dex1.close()
+		dex2.close()
+		dex3.close()
 		need.close()
+
+		need = open("both_need.txt","r")
+
+		yield from bot.say('Both still need:')
+		yield from bot.say(need.read())
+
+		need.close()
+
+	elif len(arg) == 1:
+		update_dex(arg[0])
 
 		if arg[0]=='brian':
 			need = open("brian_need.txt","r")
 		elif arg[0]=='ty':
 			need = open("ty_need.txt","r")
 
-		yield from bot.say('{} still needs:'.format(arg[0]))
+		yield from bot.say("{} still needs:".format(arg[0]))
 		yield from bot.say(need.read())
 
-		file.close()
-		dex1.close()
-		dex2.close()
-		dex3.close()
 		need.close()
+
 	elif len(arg) == 2:
 		dex1 = open("pokedex_gen1.txt","r")
 		dex2 = open("pokedex_gen2.txt","r")

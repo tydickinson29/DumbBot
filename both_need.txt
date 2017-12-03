@@ -3,16 +3,10 @@ Venasaur
 Charizard
 Dugtrio
 Primeape
-Machamp
-Grimer
-Muk
 Hitmonlee
-Hitmonchan
-Tangela
 Kangaskhan
 Mr. Mime
 Lapras
-Porygon
 Articuno
 Zapdos
 Moltres
@@ -21,35 +15,28 @@ Mew
 @@@@@@@@@@ GEN 2 @@@@@@@@@@
 Meganium
 Feraligatr
-Cleffa
 Togetic
 Mareep
 Flaaffy
 Ampharos
 Bellossom
-Politoed
 Jumpluff
 Sunflora
-Slowking
 Unown
-Wobbuffet
 Heracross
 Corsola
 Delibird
 Kingdra
 Porygon2
 Smeargle
-Tyrogue
 Hitmontop
 Magby
 Miltank
 Blissey
 Raikou
 Entei
-Suicune
 Pupitar
 Tyranitar
 Lugia
-Ho-Oh
 Celebi
 @@@@@@@@@@ GEN 3 @@@@@@@@@@

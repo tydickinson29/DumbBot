@@ -200,3 +200,7 @@ Shuppet
 Banette
 Duskull
 Dusclops
+Scizor
+Girafarig
+Tyrogue
+Politoed

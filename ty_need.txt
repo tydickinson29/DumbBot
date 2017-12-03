@@ -28,7 +28,6 @@ Chansey
 Kangaskhan
 Mr. Mime
 Lapras
-Porygon
 Omastar
 Kabutops
 Aerodactyl
@@ -39,41 +38,33 @@ Dragonair
 Dragonite
 Mewtwo
 Mew
-
 @@@@@@@@@@ GEN 2 @@@@@@@@@@
 Bayleef
 Meganium
 Quilava
 Typhlosion
-Croconaw
 Feraligatr
-Crobat
 Lanturn
 Pichu
-Cleffa
 Igglybuff
 Togepi
 Togetic
-Xatu
 Mareep
 Flaaffy
 Ampharos
 Bellossom
 Azumarill
 Politoed
-Hoppip
 Skiploom
 Jumpluff
 Sunflora
 Yanma
 Quagsire
-Espeon
 Umbreon
 Unown
 Girafarig
 Pineco
 Forretress
-Dunsparce
 Steelix
 Granbull
 Qwilfish
@@ -103,14 +94,12 @@ Miltank
 Blissey
 Raikou
 Entei
-Suicune
 Larvitar
 Pupitar
 Tyranitar
 Lugia
 Ho-Oh
 Celebi
-
 @@@@@@@@@@ GEN 3 @@@@@@@@@@
 Banette
 Dusclops
