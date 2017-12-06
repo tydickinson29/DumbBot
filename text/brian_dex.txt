@@ -205,3 +205,4 @@ Girafarig
 Tyrogue
 Politoed
 Jumpluff
+Bellossom

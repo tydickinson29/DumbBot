@@ -172,3 +172,5 @@ Wartortle
 Mareep
 Quagsire
 Raichu
+Dusclops
+Ursaring

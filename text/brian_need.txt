@@ -27,8 +27,6 @@ Mareep
 Flaaffy
 Ampharos
 Bellossom
-Politoed
-Jumpluff
 Sunflora
 Slowking
 Unown
@@ -39,7 +37,6 @@ Delibird
 Kingdra
 Porygon2
 Smeargle
-Tyrogue
 Hitmontop
 Magby
 Miltank
