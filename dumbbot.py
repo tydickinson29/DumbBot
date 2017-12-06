@@ -89,7 +89,14 @@ def ryan():
 @asyncio.coroutine
 def bryony():
 	'''Just tells it as it is'''
-	yield from bot.say('Bryony is much better than Ty')
+	yield from bot.say('''Bryony is a savage
+and needs to stop dabbing''')
+
+@bot.command()
+@asyncio.coroutine
+def alex():
+	'''Just tells it as it is'''
+	yield from bot.say('Alex is the most badass of them all')
 
 @bot.command()
 @asyncio.coroutine
@@ -100,7 +107,8 @@ def link(*arg):
 	  rl
 	  ?
 	  repo
-	  nests'''
+	  nests
+	  map (only works in ann arbor)'''
 	if arg[0] == 'api':
 		yield from bot.say('https://discordpy.readthedocs.io/en/latest/api.html')
 	elif arg[0] == 'rl':
@@ -111,6 +119,8 @@ def link(*arg):
 		yield from bot.say('https://github.com/Brigoon/DumbBot')
 	elif arg[0] == 'nests':
 		yield from bot.say('https://thesilphroad.com/atlas')
+	elif arg[0] == 'map':
+		yield from bot.say('https://www.joshwoodward.com/mod/pokemon/map/#1111000030')
 	else:
 		yield from bot.say('use \'/help link\' for valid links')
 
@@ -262,4 +272,6 @@ def clean(ctx,arg):
 	if ctx.message.author.id == '236886430616518666':
 		yield from bot.purge_from(ctx.message.channel,limit=int(arg))
 
-bot.run("MzgwOTM1MzExNTQwMzU1MDcy.DPATMQ.AVpi46yuhrnzoaVKeNuVieWWXOM")
+bot_ID = open("bot_ID.txt","r")
+bot_ID = bot_ID.read()
+bot.run(bot_ID)

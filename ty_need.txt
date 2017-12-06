@@ -1,11 +1,7 @@
 @@@@@@@@@@ GEN 1 @@@@@@@@@@
 Venasaur
 Charizard
-Wartortle
 Blastoise
-Raichu
-Nidoqueen
-Nidoking
 Clefable
 Vileplume
 Dugtrio
@@ -13,12 +9,9 @@ Primeape
 Arcanine
 Kadabra
 Alakazam
-Machoke
-Machamp
 Graveler
 Golem
 Rapidash
-Magneton
 Dewgong
 Cloyster
 Hitmonlee
@@ -39,27 +32,19 @@ Dragonite
 Mewtwo
 Mew
 @@@@@@@@@@ GEN 2 @@@@@@@@@@
-Bayleef
 Meganium
 Quilava
 Typhlosion
 Feraligatr
-Lanturn
 Pichu
 Igglybuff
-Togepi
 Togetic
-Mareep
 Flaaffy
 Ampharos
 Bellossom
-Azumarill
 Politoed
-Skiploom
 Jumpluff
 Sunflora
-Yanma
-Quagsire
 Umbreon
 Unown
 Girafarig
@@ -78,12 +63,10 @@ Piloswine
 Corsola
 Delibird
 Mantine
-Skarmory
 Kingdra
 Phanpy
 Donphan
 Porygon2
-Stantler
 Smeargle
 Tyrogue
 Hitmontop
@@ -94,11 +77,8 @@ Miltank
 Blissey
 Raikou
 Entei
-Larvitar
 Pupitar
-Tyranitar
 Lugia
-Ho-Oh
 Celebi
 @@@@@@@@@@ GEN 3 @@@@@@@@@@
 Banette

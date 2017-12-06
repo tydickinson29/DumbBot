@@ -204,3 +204,4 @@ Scizor
 Girafarig
 Tyrogue
 Politoed
+Jumpluff

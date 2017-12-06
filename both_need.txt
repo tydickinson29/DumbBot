@@ -20,7 +20,6 @@ Mareep
 Flaaffy
 Ampharos
 Bellossom
-Jumpluff
 Sunflora
 Unown
 Heracross
@@ -36,7 +35,6 @@ Blissey
 Raikou
 Entei
 Pupitar
-Tyranitar
 Lugia
 Celebi
 @@@@@@@@@@ GEN 3 @@@@@@@@@@

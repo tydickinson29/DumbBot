@@ -166,3 +166,9 @@ Skarmory
 Bayleef
 Stantler
 Togepi
+Skiploom
+Tyranitar
+Wartortle
+Mareep
+Quagsire
+Raichu
