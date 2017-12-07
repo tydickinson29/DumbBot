@@ -211,3 +211,4 @@ sunflora
 primeape
 charizard
 venasaur
+dugtrio
