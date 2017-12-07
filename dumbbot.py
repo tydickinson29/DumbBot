@@ -61,6 +61,8 @@ def on_message(message):
 			yield from bot.delete_message(message)
 	elif message.content == 'kk':
 		yield from bot.send_message(message.channel, 'kkk*')
+	elif 'yeet' in message.content.lower():
+		yield from bot.add_reaction(message,'\N{EYES}')
 
 	yield from bot.process_commands(message)
 

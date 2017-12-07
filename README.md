@@ -5,6 +5,8 @@ Just a dumb bot for discord. It sends all links to the #media channel and doesn'
 - ty
 - brian
 - ryan
+- bryony
+- alex
 - clean (admin)
 - nuke (admin)
 - bet

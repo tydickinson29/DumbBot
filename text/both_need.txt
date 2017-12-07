@@ -1,8 +1,5 @@
 @@@@@@@@@@ GEN 1 @@@@@@@@@@
-Venasaur
-Charizard
 Dugtrio
-Primeape
 Hitmonlee
 Kangaskhan
 Mr. Mime
@@ -16,11 +13,8 @@ Mew
 Meganium
 Feraligatr
 Togetic
-Mareep
 Flaaffy
 Ampharos
-Bellossom
-Sunflora
 Unown
 Heracross
 Corsola

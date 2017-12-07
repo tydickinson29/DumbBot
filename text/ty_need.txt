@@ -57,7 +57,6 @@ Scizor
 Shuckle
 Heracross
 Sneasel
-Ursaring
 Swinub
 Piloswine
 Corsola
@@ -82,4 +81,3 @@ Lugia
 Celebi
 @@@@@@@@@@ GEN 3 @@@@@@@@@@
 Banette
-Dusclops

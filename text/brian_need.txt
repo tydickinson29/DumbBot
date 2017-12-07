@@ -2,7 +2,6 @@
 Venasaur
 Charizard
 Dugtrio
-Primeape
 Machamp
 Grimer
 Muk
@@ -23,11 +22,8 @@ Meganium
 Feraligatr
 Cleffa
 Togetic
-Mareep
 Flaaffy
 Ampharos
-Bellossom
-Sunflora
 Slowking
 Unown
 Wobbuffet

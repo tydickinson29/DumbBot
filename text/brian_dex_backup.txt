@@ -200,3 +200,14 @@ Shuppet
 Banette
 Duskull
 Dusclops
+Scizor
+Girafarig
+Tyrogue
+Politoed
+Jumpluff
+Bellossom
+Mareep
+Sunflora
+Primeape
+Charizard
+Venasaur

@@ -174,3 +174,5 @@ Quagsire
 Raichu
 Dusclops
 Ursaring
+Golem
+Politoed
