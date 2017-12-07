@@ -8,38 +8,105 @@ Client = discord.Client()
 bot_prefix= "/"
 bot  = commands.Bot(command_prefix=bot_prefix)
 
-def update_dex(name):
-	dex1 = open("text/pokedex_gen1.txt","r")
-	dex2 = open("text/pokedex_gen2.txt","r")
-	dex3 = open("text/pokedex_gen3.txt","r")
+def update_dex(name,gen):
+	if gen=='1':
+		dex1 = open("text/pokedex_gen1.txt","r")
 
-	if name=='brian':
-		file = open("text/brian_dex.txt","r")
-		need = open("text/brian_need.txt","w")
-	elif name=='ty':
-		file = open("text/ty_dex.txt","r")
-		need = open("text/ty_need.txt","w")
+		if name=='brian':
+			file = open("text/brian_dex.txt","r")
+			need = open("text/brian_need.txt","w")
+		elif name=='ty':
+			file = open("text/ty_dex.txt","r")
+			need = open("text/ty_need.txt","w")
 
-	cont = file.readlines()
+		cont = file.readlines()
+			
+		for line in dex1:
+			if not line in cont:
+				if 'mr. mime' in line:
+					need.write('Mr. Mime\n')
+				else:
+					need.write(line[0].upper()+line[1:])
 		
-	need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
-	for line in dex1:
-		if not line in cont:
-			need.write(line)
-	need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
-	for line in dex2:
-		if not line in cont:
-			need.write(line)
-	need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
-	for line in dex3:
-		if not line in cont:
-			need.write(line)
-	need.close()
+		need.close()
+		file.close()
+		dex1.close()
 
-	file.close()
-	dex1.close()
-	dex2.close()
-	dex3.close()
+	elif gen=='2':
+		dex2 = open("text/pokedex_gen2.txt","r")
+
+		if name=='brian':
+			file = open("text/brian_dex.txt","r")
+			need = open("text/brian_need.txt","w")
+		elif name=='ty':
+			file = open("text/ty_dex.txt","r")
+			need = open("text/ty_need.txt","w")
+
+		cont = file.readlines()
+			
+		for line in dex2:
+			if not line in cont:
+				need.write(line[0].upper()+line[1:])
+		
+		need.close()
+		file.close()
+		dex2.close()
+
+	elif gen=='3':
+		dex3 = open("text/pokedex_gen3.txt","r")
+
+		if name=='brian':
+			file = open("text/brian_dex.txt","r")
+			need = open("text/brian_need.txt","w")
+		elif name=='ty':
+			file = open("text/ty_dex.txt","r")
+			need = open("text/ty_need.txt","w")
+
+		cont = file.readlines()
+			
+		for line in dex3:
+			if not line in cont:
+				need.write(line[0].upper()+line[1:])
+		
+		need.close()
+		file.close()
+		dex3.close()
+		
+	else:
+		dex1 = open("text/pokedex_gen1.txt","r")
+		dex2 = open("text/pokedex_gen2.txt","r")
+		dex3 = open("text/pokedex_gen3.txt","r")
+
+		if name=='brian':
+			file = open("text/brian_dex.txt","r")
+			need = open("text/brian_need.txt","w")
+		elif name=='ty':
+			file = open("text/ty_dex.txt","r")
+			need = open("text/ty_need.txt","w")
+
+		cont = file.readlines()
+			
+		need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
+		for line in dex1:
+			if not line in cont:
+				if 'mr. mime' in line:
+					need.write('Mr. Mime\n')
+				else:
+					need.write(line[0].upper()+line[1:])
+		need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
+		for line in dex2:
+			if not line in cont:
+				need.write(line[0].upper()+line[1:])
+		need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
+		for line in dex3:
+			if not line in cont:
+				need.write(line[0].upper()+line[1:])
+		need.close()
+
+		file.close()
+		dex1.close()
+		dex2.close()
+		dex3.close()
 
 @bot.event
 @asyncio.coroutine
@@ -145,62 +212,187 @@ def pokedex(*arg):
 	  ty: shows Tys needed pokemon
 	  both: shows what both Ty and Brian do not have
 	  example: /pokedex brian
+	<arg1> <arg2>:
+	  <arg1> same as previous
+	  <arg2> generation to be shown
+	  example: /pokedex brian 1
 	<arg1> <arg2>: adds a pokemon to the pokedex
 	  <arg1> same as previous
 	  <arg2> name of pokemon to be added
-	  example: /pokedex brian Bulbasaur
-	    Yes, the capitalization is required'''
-	if (len(arg)==1) and (arg[0]=='both'):
-		dex_brian = open("text/brian_dex.txt","r")
-		dex_ty = open("text/ty_dex.txt","r")
-		dex1 = open("text/pokedex_gen1.txt","r")
-		dex2 = open("text/pokedex_gen2.txt","r")
-		dex3 = open("text/pokedex_gen3.txt","r")
-		need = open("text/both_need.txt","w")
+	  example: /pokedex brian bulbasaur'''
 
-		cont_brian = dex_brian.readlines()
-		cont_ty = dex_ty.readlines()
+	# Outputs what both need
+	if arg[0]=='both':
+		if len(arg)==2 and arg[1]=='1':
+			dex_brian = open("text/brian_dex.txt","r")
+			dex_ty = open("text/ty_dex.txt","r")
+			dex1 = open("text/pokedex_gen1.txt","r")
+			need = open("text/both_need.txt","w")
 
-		need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
-		for line in dex1:
-			if not ((line in cont_brian) or (line in cont_ty)):
-				need.write(line)
-		need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
-		for line in dex2:
-			if not ((line in cont_brian) or (line in cont_ty)):
-				need.write(line)
-		need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
-		for line in dex3:
-			if not ((line in cont_brian) or (line in cont_ty)):
-				need.write(line)
+			cont_brian = dex_brian.readlines()
+			cont_ty = dex_ty.readlines()
 
-		dex_brian.close()
-		dex_ty.close()
-		dex1.close()
-		dex2.close()
-		dex3.close()
-		need.close()
+			for line in dex1:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					if 'mr. mime' in line:
+						need.write('Mr. Mime\n')
+					else:
+						need.write(line[0].upper()+line[1:])
 
-		need = open("text/both_need.txt","r")
+			dex_brian.close()
+			dex_ty.close()
+			dex1.close()
+			need.close()
 
-		yield from bot.say('Both still need:')
-		yield from bot.say(need.read())
+			need = open("text/both_need.txt","r")
 
-		need.close()
+			yield from bot.say('Both still need from Gen 1:')
+			yield from bot.say(need.read())
 
-	elif len(arg) == 1:
-		update_dex(arg[0])
+			need.close()
+		elif len(arg)==2 and arg[1]=='2':
+			dex_brian = open("text/brian_dex.txt","r")
+			dex_ty = open("text/ty_dex.txt","r")
+			dex2 = open("text/pokedex_gen2.txt","r")
+			need = open("text/both_need.txt","w")
+
+			cont_brian = dex_brian.readlines()
+			cont_ty = dex_ty.readlines()
+
+			for line in dex2:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					need.write(line[0].upper()+line[1:])
+
+			dex_brian.close()
+			dex_ty.close()
+			dex2.close()
+			need.close()
+
+			need = open("text/both_need.txt","r")
+
+			yield from bot.say('Both still need from Gen 2:')
+			yield from bot.say(need.read())
+
+			need.close()
+		elif len(arg)==2 and arg[1]=='3':
+			dex_brian = open("text/brian_dex.txt","r")
+			dex_ty = open("text/ty_dex.txt","r")
+			dex3 = open("text/pokedex_gen3.txt","r")
+			need = open("text/both_need.txt","w")
+
+			cont_brian = dex_brian.readlines()
+			cont_ty = dex_ty.readlines()
+
+			for line in dex3:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					need.write(line[0].upper()+line[1:])
+
+			dex_brian.close()
+			dex_ty.close()
+			dex3.close()
+			need.close()
+
+			need = open("text/both_need.txt","r")
+
+			yield from bot.say('Both still need from Gen 3:')
+			yield from bot.say(need.read())
+
+			need.close()
+		else:
+			dex_brian = open("text/brian_dex.txt","r")
+			dex_ty = open("text/ty_dex.txt","r")
+			dex1 = open("text/pokedex_gen1.txt","r")
+			dex2 = open("text/pokedex_gen2.txt","r")
+			dex3 = open("text/pokedex_gen3.txt","r")
+			need = open("text/both_need.txt","w")
+
+			cont_brian = dex_brian.readlines()
+			cont_ty = dex_ty.readlines()
+
+			need.write("@@@@@@@@@@ GEN 1 @@@@@@@@@@\n")
+			for line in dex1:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					if 'mr. mime' in line:
+						need.write('Mr. Mime')
+					else:
+						need.write(line[0].upper()+line[1:])
+			need.write("@@@@@@@@@@ GEN 2 @@@@@@@@@@\n")
+			for line in dex2:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					need.write(line[0].upper()+line[1:])
+			need.write("@@@@@@@@@@ GEN 3 @@@@@@@@@@\n")
+			for line in dex3:
+				if not ((line in cont_brian) or (line in cont_ty)):
+					need.write(line[0].upper()+line[1:])
+
+			dex_brian.close()
+			dex_ty.close()
+			dex1.close()
+			dex2.close()
+			dex3.close()
+			need.close()
+
+			need = open("text/both_need.txt","r")
+
+			yield from bot.say('Both still need:')
+			yield from bot.say(need.read())
+
+			need.close()
+
+	# Outputs what <arg> needs
+	elif len(arg)==2 and arg[1]=='1':
+		update_dex(arg[0],arg[1])
 
 		if arg[0]=='brian':
 			need = open("text/brian_need.txt","r")
 		elif arg[0]=='ty':
 			need = open("text/ty_need.txt","r")
 
-		yield from bot.say("{} still needs:".format(arg[0]))
+		yield from bot.say("{} still needs in Gen 1:".format(arg[0][0].upper()+arg[0][1:]))
 		yield from bot.say(need.read())
 
 		need.close()
 
+	elif len(arg)==2 and arg[1]=='2':
+		update_dex(arg[0],arg[1])
+
+		if arg[0]=='brian':
+			need = open("text/brian_need.txt","r")
+		elif arg[0]=='ty':
+			need = open("text/ty_need.txt","r")
+
+		yield from bot.say("{} still needs in Gen 2:".format(arg[0][0].upper()+arg[0][1:]))
+		yield from bot.say(need.read())
+
+		need.close()
+
+	elif len(arg)==2 and arg[1]=='3':
+		update_dex(arg[0],arg[1])
+
+		if arg[0]=='brian':
+			need = open("text/brian_need.txt","r")
+		elif arg[0]=='ty':
+			need = open("text/ty_need.txt","r")
+
+		yield from bot.say("{} still needs in Gen 3:".format(arg[0][0].upper()+arg[0][1:]))
+		yield from bot.say(need.read())
+
+		need.close()
+
+	elif len(arg)==1:
+		update_dex(arg[0],0)
+
+		if arg[0]=='brian':
+			need = open("text/brian_need.txt","r")
+		elif arg[0]=='ty':
+			need = open("text/ty_need.txt","r")
+
+		yield from bot.say("{} still needs:".format(arg[0][0].upper()+arg[0][1:]))
+		yield from bot.say(need.read())
+
+		need.close()
+
+	# Adds pokemon to pokedex
 	elif len(arg) == 2:
 		dex1 = open("text/pokedex_gen1.txt","r")
 		dex2 = open("text/pokedex_gen2.txt","r")
@@ -214,47 +406,50 @@ def pokedex(*arg):
 
 		valid = False
 
+		first = arg[0].lower()
+		second = arg[1].lower()
+
 		for i in range(len(pokedex1)):
-			if arg[1] == pokedex1[i].rstrip():
+			if second == pokedex1[i].rstrip():
 				valid = True
 				break
 		for i in range(len(pokedex2)):
-			if (arg[1] == pokedex2[i].rstrip()) or valid:
+			if second == pokedex2[i].rstrip() or valid:
 				valid = True
 				break
 		for i in range(len(pokedex3)):
-			if (arg[1] == pokedex3[i].rstrip()) or valid:
+			if second == pokedex3[i].rstrip() or valid:
 				valid = True
 				break
 
 		if valid:
-			if arg[0]=='brian':
+			if first=='brian':
 				file = open("text/brian_dex.txt","r")
-			elif arg[0]=='ty':
+			elif first=='ty':
 				file = open("text/ty_dex.txt","r")
 
 			cont = file.readlines()
 			file.close()
 
 			for j in range(len(cont)):
-				if arg[1] == cont[j].rstrip():
+				if second == cont[j].rstrip():
 					valid = False
 					break
 
 			if valid:
-				if arg[0]=='brian':
+				if first=='brian':
 					file = open("text/brian_dex.txt","a")
-				elif arg[0]=='ty':
+				elif first=='ty':
 					file = open("text/ty_dex.txt","a")
 
-				file.write(arg[1])
+				file.write(arg[1].lower())
 				file.write('\n')
 				file.close()
-				yield from bot.say('{} successfully added!'.format(arg[1]))
+				yield from bot.say('{} successfully added!'.format(arg[1][0].upper() + arg[1][1:].lower()))
 			else:
-				yield from bot.say('This Pokemon is already registered in {}s Pokedex'.format(arg[0]))
+				yield from bot.say('This Pokemon is already registered in {}s Pokedex'.format(arg[0][0].upper()+arg[0][1:].lower()))
 		else:
-			yield from bot.say('Invalid Pokemon, be sure you capitilized correctly')
+			yield from bot.say('Invalid Pokemon')
 	else:
 		yield from bot.say('use \'/help pokedex\'')
 

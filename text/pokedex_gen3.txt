@@ -1,5 +1,5 @@
-Sableye
-Shuppet
-Banette
-Duskull
-Dusclops
+sableye
+shuppet
+banette
+duskull
+dusclops
