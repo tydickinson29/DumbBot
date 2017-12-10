@@ -119,15 +119,35 @@ def pokedex(name='broken',gen='0'):
 	<arg1> <arg2>: adds a pokemon to the pokedex
 	  <arg1> same as previous
 	  <arg2> name of pokemon to be added
-	  example: /pokedex brian bulbasaur'''
+	  example: /pokedex brian bulbasaur
+	<arg1> <arg2>: registers a new user
+	  <arg1> register
+	  <arg2> name of registee
+	  example: /pokedex register brian'''
 
 	try:
 		name = name.lower()
 		gen = gen.lower()
+		approved_file = open('text/approved.txt','r')
+		approved = approved_file.readlines()
+		approved_file.close()
+		# Adds a new user to the approved list
+		if name=='register':
+			if gen+'\n' in approved:
+				yield from bot.say(gen[0].upper()+gen[1:].lower()+' has already been approved')
+				return
+
+			new_dex = open('text/'+gen+'_dex.txt','w')
+			new_dex.close()
+			new_approved = open('text/approved.txt','a')
+			new_approved.write(gen+'\n')
+			new_approved.close()
+			yield from bot.say(gen[0].upper()+gen[1:]+' has been approved!')
+			
 		# Outputs what <arg1> needs with the option to restrict the generation
-		if gen=='0' or gen=='1' or gen=='2' or gen=='3':
-			if not (name=='ty' or name=='brian' or name=='both'):
-				raise Exception('NameError')
+		elif gen=='0' or gen=='1' or gen=='2' or gen=='3':
+			if not ((name+'\n') in approved):
+				yield from bot.say(name[0].upper()+name[1:].lower()+' is not a valid name')
 				return
 
 			need = open('text/'+name+'_need.txt','w')
@@ -220,6 +240,7 @@ def pokedex(name='broken',gen='0'):
 
 	except:
 		yield from bot.say('use \'/help pokedex\'')
+		raise
 
 @bot.command(pass_context=True)
 @asyncio.coroutine
