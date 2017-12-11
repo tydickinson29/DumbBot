@@ -1,14 +1,145 @@
-# DumbBot
-Just a dumb bot for discord. It sends all links to the #media channel and doesn't allow anything except links and attachments in #media. It doesn't allow anything except Stat Tracker commands and Stat Tracker bot posts in #stat_tracker.
+# Dumb Bot
 
-### Commands
-- ty
-- brian
-- ryan
-- bryony
-- alex
-- clean (admin)
-- nuke (admin)
-- bet
-- link
-- pokedex
+This is a project that started as a way for me to learn Python. I also thought it would be fun to mess around with a Pokedex tracker for keeping track of what you still need in PokemonGo. That is now it's primary use.
+
+## Commands
+
+### help
+
+To learn what the commands are, their usages, or valid input, use the 'help' command:
+```
+/help
+```
+
+You can also use it to see specific commands:
+```
+/help <command>
+```
+
+### pokedex
+
+This command will keep track and update your personal Pokemon Go pokedex. To get started use the 'register' command:
+```
+/pokedex register <username>
+```
+
+After you have registered your name, you can add pokemon using the following syntax:
+```
+/pokedex <username> <pokemon>
+```
+
+To view what you still need:
+```
+/pokedex <username>
+```
+NOTE: If you have not added enough Pokemon to your Pokedex, this will not work, as Discord only allows up to 2000 characters to be printed per message.
+
+To view what you still need within a specific generation:
+```
+/pokedex <username> <generation>
+```
+
+### bet
+
+This command will randomly choose 1 item among the items given as input:
+```
+/bet pizza chinese
+```
+
+To use this command with items with spaces in it, surround the items by quotes:
+```
+/bet "Play Pokemon Go" "Spend time with girlfriend"
+```
+
+NOTE: This command can be used for any number of inputs
+
+### link
+
+This is mainly used by me to keep track of websites I frequent:
+```
+/link <link abbreviation>
+```
+
+### ty
+
+This command is dumb and is just for fun with my friends. Usage:
+```
+/ty
+```
+
+### brian
+
+This command is dumb and is just for fun with my friends. Usage:
+```
+/brian
+```
+
+### ryan
+
+This command is dumb and is just for fun with my friends. Usage:
+```
+/ryan
+```
+
+### bryony
+
+This command is dumb and is just for fun with my friends. Usage:
+```
+/bryony
+```
+
+### alex
+
+This command is dumb and is just for fun with my friends. Usage:
+```
+/alex
+```
+
+### nuke
+
+This is only to be used by admins. This will clear out an entire channel. I mainly use it within my test channels when debugging new commands:
+```
+/nuke
+```
+
+### clean
+
+Similar to nuke, this command is only to be used by admins. This command will delete the last <N> messages:
+```
+/clean <N>
+```
+
+## Other Tasks
+
+This bot also performs some random tasks, either for hilarity or genuine usefullness.
+
+### Link Reposting
+
+Within my server, I keep a 'media' channel to keep pictures and links so it is easy to find previous posts. This bot will repost any links into the media channel.
+
+### Channel Restriction
+
+Within the media channel, and another channel we use for Stat Tracker bot, this bot will delete any content that is not supposed to be in those respective channels. The media channel only allows links and attachments, the stat_tracker channel only allows commands for Stat Tracker bot.
+
+### Stupid Joke (We aren't racist)
+
+This bot replaces 'kk' with 'kkk\*'. Don't ask why, we're just dumb.
+
+### Yeet Reaction
+
+Whenever the word 'yeet' is typed in a message, the bot will respond with the :eyes: emoji. Again, we're dumb.
+
+## Under Construction
+
+### Attachment Reposting
+
+I am currently *trying* to have the bot repost any attachments into the media channel as well. This requires the use of the aiohttp module so I am trying to understand how that works.
+
+## Authors
+
+* **Brian Tomiuk**
+
+## Acknowledgments
+
+* Hat tip to Ty Dickinson for helping to shorten the file
+

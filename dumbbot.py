@@ -146,8 +146,8 @@ def pokedex(name='broken',gen='0'):
 			
 		# Outputs what <arg1> needs with the option to restrict the generation
 		elif gen=='0' or gen=='1' or gen=='2' or gen=='3':
-			if not ((name+'\n') in approved):
-				yield from bot.say(name[0].upper()+name[1:].lower()+' is not a valid name')
+			if not (((name+'\n') in approved) or name=='both'):
+				yield from bot.say(name[0].upper()+name[1:].lower()+' is not a valid user')
 				return
 
 			need = open('text/'+name+'_need.txt','w')
@@ -199,15 +199,18 @@ def pokedex(name='broken',gen='0'):
 
 			yield from bot.say(name[0].upper()+name[1:].lower()+' still need'+addition+':')
 			read = need.read()
+			need.close()
 			if(len(read)==0):
 				yield from bot.say('Nothing! You got all of them!')
 			else:
 				yield from bot.say(read)
 
-			need.close()
-
 		# Adds <arg2> to <arg1>s pokedex
 		else:
+			if not ((name+'\n') in approved):
+				yield from bot.say(name[0].upper()+name[1:].lower()+' is not a valid user')
+				return
+
 			dex1 = open('text/pokedex_gen1.txt','r')
 			dex2 = open('text/pokedex_gen2.txt','r')
 			dex3 = open('text/pokedex_gen3.txt','r')

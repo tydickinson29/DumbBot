@@ -1,11 +1,8 @@
-Machamp
 Grimer
-Hitmonlee
 Hitmonchan
 Tangela
 Kangaskhan
 Mr. Mime
-Lapras
 Porygon
 Articuno
 Zapdos
