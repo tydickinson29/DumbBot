@@ -121,10 +121,6 @@ Within my server, I keep a 'media' channel to keep pictures and links so it is e
 
 Within the media channel, and another channel we use for Stat Tracker bot, this bot will delete any content that is not supposed to be in those respective channels. The media channel only allows links and attachments, the stat_tracker channel only allows commands for Stat Tracker bot.
 
-### Stupid Joke (We aren't racist)
-
-This bot replaces 'kk' with 'kkk\*'. Don't ask why, we're just dumb.
-
 ### Yeet Reaction
 
 Whenever the word 'yeet' is typed in a message, the bot will respond with the :eyes: emoji. Again, we're dumb.

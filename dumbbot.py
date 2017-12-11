@@ -26,8 +26,6 @@ def on_message(message):
 	elif (not message.content.startswith('http')) and message.channel.id == '380028343611031565':
 		if not message.attachments:
 			yield from bot.delete_message(message)
-	elif message.content == 'kk':
-		yield from bot.send_message(message.channel, 'kkk*')
 	elif 'yeet' in message.content.lower():
 		yield from bot.add_reaction(message,'\N{EYES}')
 
@@ -251,7 +249,10 @@ def nuke(ctx):
 	'''Only Brigoon can use this command
 	removes all messages of a channel'''
 	if ctx.message.author.id == '236886430616518666':
-		yield from bot.purge_from(ctx.message.channel)
+		if ctx.message.channel.name == 'test':
+			yield from bot.purge_from(ctx.message.channel)
+		else:
+			yield from bot.say('Wrong channel idiot')
 
 @bot.command(pass_context=True)
 @asyncio.coroutine
