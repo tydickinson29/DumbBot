@@ -18,7 +18,7 @@ You can also use it to see specific commands:
 
 ### pokedex
 
-This command will keep track and update your personal Pokemon Go pokedex. To get started use the 'register' command:
+This command will keep track of and update your personal Pokemon Go pokedex. To get started use the 'register' command:
 ```
 /pokedex register <username>
 ```
@@ -32,7 +32,7 @@ To view what you still need:
 ```
 /pokedex <username>
 ```
-NOTE: If you have not added enough Pokemon to your Pokedex, this will not work, as Discord only allows up to 2000 characters to be printed per message.
+######NOTE: If you have not added enough Pokemon to your Pokedex, this will not work, as Discord only allows up to 2000 characters to be printed per message.
 
 To view what you still need within a specific generation:
 ```
@@ -51,7 +51,7 @@ To use this command with items with spaces in it, surround the items by quotes:
 /bet "Play Pokemon Go" "Spend time with girlfriend"
 ```
 
-NOTE: This command can be used for any number of inputs
+######NOTE: This command can be used for any number of inputs
 
 ### link
 
