@@ -4,9 +4,9 @@ from discord.ext import commands
 import asyncio
 import random
 
-Client = discord.Client()
-bot_prefix= "/"
-bot  = commands.Bot(command_prefix=bot_prefix)
+client = discord.Client()
+bot_prefix = "/"
+bot = commands.Bot(command_prefix=bot_prefix)
 
 @bot.event
 @asyncio.coroutine
