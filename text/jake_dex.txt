@@ -263,3 +263,4 @@ slakoth
 nuzleaf
 mawile
 shiftry
+hitmontop

@@ -81,7 +81,6 @@ phanpy
 donphan
 porygon2
 stantler
-smeargle
 tyrogue
 hitmontop
 smoochum
@@ -97,4 +96,3 @@ pupitar
 tyranitar
 lugia
 ho-oh
-celebi

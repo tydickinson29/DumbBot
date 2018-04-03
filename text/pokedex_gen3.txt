@@ -5,7 +5,7 @@ torchic
 combusken
 blaziken
 mudkip
-marshtomb
+marshtomp
 swampert
 poochyena
 mightyena
@@ -115,6 +115,8 @@ salamence
 beldum
 metang
 metagross
+latias
+latios
 kyogre
 groudon
 rayquaza
