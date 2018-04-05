@@ -266,4 +266,3 @@ bot_ID_txt = open("text/bot_ID.txt","r")
 bot_ID = bot_ID_txt.read()
 bot_ID_txt.close()
 bot.run(bot_ID)
-
