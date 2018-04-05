@@ -109,6 +109,8 @@ Similar to nuke, this command is only to be used by admins. This command will de
 /clean <N>
 ```
 
+###### NOTE: 'nuke' and 'clean' will not work if the messages are over 10 days old
+
 ## Other Tasks
 
 This bot also performs some random tasks, either for hilarity or genuine usefullness.
@@ -130,6 +132,10 @@ Whenever the word 'yeet' is typed in a message, the bot will respond with the :e
 ### Attachment Reposting
 
 I am currently *trying* to have the bot repost any attachments into the media channel as well. This requires the use of the aiohttp module so I am trying to understand how that works.
+
+### TM Usage Tracker
+
+There are a number of Pokemon I would like to use TM's on, but can't remember them all. This would allow a user to input the Pokemon that they want to use TM's on as well as which TM's. I will also probably allow an option to show all, show quick TM's, and show charge TM's. That way if you obtain one TM or the other, you can quickly see which Pokemon you would like to use it on.
 
 ## Authors
 
