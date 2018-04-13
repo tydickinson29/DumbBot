@@ -4,7 +4,7 @@ This is a project that started as a way for me to learn Python. I also thought i
 
 ## Usage
 
-There is a shell script (for bash) included in this repository that will call try starting the bot. If it doesn't work after 10 tries, it will wait 60 seconds. You can use this script simply by navigating to the containing folder and executing it:
+There is a shell script (for bash) included in this repository that will try to start the bot. If it doesn't start after 10 tries, it will wait 60 seconds. You can use this script simply by navigating to the containing folder and executing it:
 ```
 ./call.sh
 ```
