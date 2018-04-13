@@ -67,6 +67,12 @@ def alex():
 
 @bot.command()
 @asyncio.coroutine
+def jake():
+	'''Just tells it as it is'''
+	yield from bot.say('Jake *still* doesn\'t have Mewtwo LuL')
+
+@bot.command()
+@asyncio.coroutine
 def link(*arg):
 	'''Provides the link desired
 	<arg> which link you want. Links are:
