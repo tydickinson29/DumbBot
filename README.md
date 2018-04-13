@@ -2,6 +2,18 @@
 
 This is a project that started as a way for me to learn Python. I also thought it would be fun to mess around with a Pokedex tracker for keeping track of what you still need in PokemonGo. That is now it's primary use.
 
+## Usage
+
+There is a shell script (for bash) included in this repository that will call try starting the bot. If it doesn't work after 10 tries, it will wait 60 seconds. You can use this script simply by navigating to the containing folder and executing it:
+```
+./call.sh
+```
+
+Alternatively, if you would prefer to just call the bot without retries:
+```
+python3 dumbbot.py
+```
+
 ## Commands
 
 ### help
