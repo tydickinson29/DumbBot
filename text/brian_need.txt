@@ -1,12 +1,39 @@
+@@@@@@@@@@ GEN 1 @@@@@@@@@@
+Kangaskhan
+Mr. Mime
+Articuno
+Zapdos
+Moltres
+Mew
+@@@@@@@@@@ GEN 2 @@@@@@@@@@
 Feraligatr
-Flaaffy
-Ampharos
 Unown
 Heracross
 Corsola
-Porygon2
-Magby
 Miltank
 Raikou
 Entei
 Suicune
+@@@@@@@@@@ GEN 3 @@@@@@@@@@
+Masquerain
+Breloom
+Vigoroth
+Slaking
+Volbeat
+Wailord
+Torkoal
+Cacturne
+Lunatone
+Crawdaunt
+Lileep
+Cradily
+Armaldo
+Milotic
+Tropius
+Chimecho
+Absol
+Relicanth
+Shelgon
+Salamence
+Latias
+Rayquaza

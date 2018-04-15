@@ -309,3 +309,7 @@ kyogre
 groudon
 rayquaza
 latios
+combusken
+blaziken
+flaaffy
+ampharos
