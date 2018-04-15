@@ -1,9 +1,20 @@
+@@@@@@@@@@ GEN 1 @@@@@@@@@@
+Hitmonlee
+Kangaskhan
+Mr. Mime
+Lapras
+Kabutops
+Aerodactyl
+Articuno
+Zapdos
+Moltres
+Mewtwo
+Mew
+@@@@@@@@@@ GEN 2 @@@@@@@@@@
 Quilava
 Typhlosion
 Feraligatr
 Togetic
-Flaaffy
-Ampharos
 Bellossom
 Girafarig
 Pineco
@@ -16,3 +27,33 @@ Miltank
 Blissey
 Raikou
 Entei
+@@@@@@@@@@ GEN 3 @@@@@@@@@@
+Ludicolo
+Pelipper
+Kirlia
+Gardevoir
+Masquerain
+Vigoroth
+Slaking
+Volbeat
+Sharpedo
+Wailord
+Torkoal
+Vibrava
+Flygon
+Lunatone
+Crawdaunt
+Lileep
+Cradily
+Anorith
+Armaldo
+Milotic
+Banette
+Tropius
+Chimecho
+Relicanth
+Shelgon
+Salamence
+Metang
+Metagross
+Latias

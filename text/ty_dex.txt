@@ -313,3 +313,4 @@ combusken
 blaziken
 flaaffy
 ampharos
+moltres
