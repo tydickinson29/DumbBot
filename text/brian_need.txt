@@ -3,7 +3,6 @@ Kangaskhan
 Mr. Mime
 Articuno
 Zapdos
-Mew
 @@@@@@@@@@ GEN 2 @@@@@@@@@@
 Feraligatr
 Unown
@@ -21,7 +20,6 @@ Slaking
 Volbeat
 Wailord
 Torkoal
-Cacturne
 Lunatone
 Crawdaunt
 Lileep

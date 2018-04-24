@@ -334,3 +334,5 @@ luvdisc
 vibrava
 flygon
 moltres
+mew
+cacturne
